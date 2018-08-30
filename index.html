@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whatsapp</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container-fluid outer-container" style="height: 100vh;overflow: hidden;">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-12 col-12 container-full chat-list" id="chat_list">
+				<nav class="navbar navbar-light nav-background container-full flex-items-start">
+				  <a class="navbar-brand" href="#">
+				    <img src="images/previewImage.png" width="40" height="40" alt="profile photo" style="border-radius: 50%" onclick="open_profile_view()">
+				    <span style="color: white">Sayan Banerjee</span>
+				  </a>
+					<div class="dropdown dropleft">
+					  <a class="fas fa-ellipsis-v ellipsis" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					  </a>
+					  <!-- Menu -->
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+					    <a class="dropdown-item" href="#">New Group</a>
+					    <a class="dropdown-item" href="#">Profile</a>
+					    <a class="dropdown-item" href="#">Archived</a>
+					    <a class="dropdown-item" href="#">Starred</a>
+					    <a class="dropdown-item" href="#">Settings</a>
+					    <a class="dropdown-item" href="#">Logout</a>
+					  </div>
+					</div>
+				</nav>
+				<div id="recentChatList" style="cursor: default;">
+				
+				</div>
+				
+		</div>
+			<!-- Conversation display section -->
+			<div id="overlay"></div>
+			<div class="col-lg-8 col-md-8 container-full " style="display: none;height:100vh" id="chat_box">
+
+				<div class="d-flex flex-column h-100">
+					<!-- Navbar -->
+					<div class="navbar navbar-light nav-background container-full flex-items-start">
+
+								<a class="navbar-brand" href="#"><i id="back_button" onclick="remove_overlay()" class="fas fa-arrow-left" style="padding-left: 10px;padding-right: 10px;color: white;font-size: 1.2rem"></i>
+								    <img id="chat_navbar_image" src="images/previewImage.png" width="40" height="40" alt="profile_picture" style="border-radius: 50%">
+								    <span id="profile_name"></span><br>
+							 	 </a>
+							 <div class="text-right">
+							 	<i class="fas fa-search fa-padding"></i>
+							 	<i class="fas fa-paperclip fa-padding"></i>
+							 	<i class="fas fa-ellipsis-v fa-padding"></i>
+							 </div>
+					</div>
+					<!-- Messages -->
+				<div class="container-full message-display h-100 " id="message" style="overflow-y: auto;padding: 10px">
+				</div>
+				<!-- Compose Message -->
+				<div class="container-full compose-message aalign-items-end" style="padding-bottom: 10px;padding-top: 10px">
+					<div class="row" style="margin-left: 5px;margin-right: 5px">
+					<div class="col-md-2 col-sm-2 col-2 text-right" style="font-size: 1.5rem">
+					<i class="far fa-smile"></i></div>
+					<div class="col-md-8 col-sm-8 col-8"><input type="text" placeholder="Enter your message" class="text-input"/></div>
+					<div class="col-md-2 col-sm-2 col-2" style="font-size: 1.5rem"><i class="fas fa-arrow-circle-right"></i></div></div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- profile details -->
+		<div id="profile_pic_view">
+			<div class="d-flex flex-column w-100 h-100 m-0">
+				<div class="row" style="background-color: #E1EAE3">
+						<i class="fas fa-times p-2 mx-3 my-1 text-dark" style="font-size: 1.5rem; cursor: pointer;" onclick="hideProfileSettings()"></i>
+				</div>
+				<div class="d-flex flex-column">
+					<img src="images/previewImage.png" class="img-fluid rounded-circle my-5 justify-self-center mx-auto" style="height: 250px;width: 250px" id="display_photo" onclick="upload_photo()">
+					<input type="file" class="d-none" id="display_photo_upload">
+					<div style="background-color: #E1EAE3" class="row p-2">
+						<div class="text-muted"><label>Name</label></div>
+					</div>
+					<div style="background-color: #E1EAE3" class="row p-2">Sayan Banerjee</div>
+					<br><div class="text-muted" style="font-size: 0.9rem">This is not your username. This name will be visible to your contacts.</div><br>
+					<div style="background-color: #E1EAE3" class="row p-2">
+						<div class="text-muted"><label>About</label></div>
+					</div>
+					<div style="background-color: #E1EAE3" class="row p-2 align-items-end">This a whatsapp frontend clone.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>

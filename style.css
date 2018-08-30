@@ -1,0 +1,101 @@
+:root{
+	font-size: 16px
+}
+.chat-list{
+	border-right:2px solid #EBF2EC;
+	height: 100vmax;
+}
+.dropdown .ellipsis{
+	color: white;
+}
+.dropdown .elipsis:hover{
+	color: white;
+}
+.nav-background{
+	background-color: #11AA18;
+}
+.navbar{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.fa-padding{
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+}
+.chat_list:hover{
+	background-color: #E1EAE3;
+}
+.message-display{
+	background-color: #E1EAE3;
+	/*height:80%;*/
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.compose-message{
+	background-color: #F9FFFA;
+	/*height: 10%;*/
+	margin-right: -15px;
+	margin-left: -15px;
+}
+.text-input{
+	padding:3px;
+	width: 100%;
+	border-radius: 3px;
+}
+.recent_last_time{
+	font-size: .7rem;
+}
+.msg{
+	width: 200px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+/*.contact-picture{
+	background-color: red;
+}
+.message-preview{
+	background-color: blue;
+}*/
+/*.msg{
+	margin: 0;padding: 0;
+}*/
+
+/*scroll bar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+#profile_name{
+	color: white;
+	font-size: 1.2rem;
+}
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(200,0,0,1); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}

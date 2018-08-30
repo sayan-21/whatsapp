@@ -1,0 +1,17 @@
+{
+	"phone_number":"9988457712",
+	"profile_picture":"images/contact2.jpg",
+	"messages":[{
+		"status":1,
+		"message":"How are you???",
+		"time":"4:15",
+		"date":"21/02/2018",
+		"read_status":1
+	},{
+		"status":2,
+		"message":"I am fine",
+		"time":"4:16",
+		"date":"21/02/2018",
+		"delivery_status":0
+	}]
+}
